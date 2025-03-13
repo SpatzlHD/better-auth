@@ -238,10 +238,11 @@ export const checkOrganizationSlug = createAuthEndpoint(
 			return ctx.json({
 				status: true,
 			});
+		} else {
+			return ctx.json({
+				status:false
+			})
 		}
-		throw new APIError("BAD_REQUEST", {
-			message: "slug is taken",
-		});
 	},
 );
 
